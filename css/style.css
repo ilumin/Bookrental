@@ -101,3 +101,5 @@ body {
 
 .navbar-text { line-height: 50px; }
 .form-actions { margin-bottom: 0; }
+
+.form-login .info-error { position: absolute; top: 95px; left: 0; right: 0; color: red; }

@@ -29,29 +29,24 @@
             <span class="icon-bar"></span>
           </a>
 
-          <a class="brand" href="dashboard.html">Pugkung Book Rentals</a>
+          <a class="brand" href="<?php echo $config['app']['baseUrl'].'?page=dashboard'; ?>">Pugkung Book Rentals</a>
 
           <div class="nav-collapse collapse">
+            
             <ul class="nav">
-              <li class="active"><a href="dashboard.html">Home</a></li>
-              <li><a href="rent-1.html">Rent</a></li>
-              <li><a href="return-1.html">Return</a></li>
-
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Book management <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="view-all-book.html">View all books</a></li>
-                  <li><a href="add-book-1.html">Add new book</a></li>
-                </ul>
-              </li>
-
-              <li><a href="new-user.html">New Member</a></li>
+              <?php foreach($config['app']['navigator'] as $page => $navigator): ?>
+              <li<?php if($_page==$page): ?> class="active"<?php endif; ?>>
+                <a href="<?php echo $config['app']['baseUrl'].$navigator['url']; ?>"><?php echo $navigator['label']; ?></a></li>
+              <?php endforeach; ?>
             </ul>
+
             <p class="navbar-text pull-right">
               Logged in as <a href="#" class="navbar-link">Admin</a>
             </p>
+
           </div><!--/.nav-collapse -->
         </div><!-- /.navbar-inner -->
+
       </div><!-- /.navbar -->
 
     </div> <!-- /.container -->

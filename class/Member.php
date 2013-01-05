@@ -21,8 +21,9 @@ class Member
     private $result;
 
     /**
-     * @return void 
-     */   
+     * Description
+     * @return void
+     */
     public function __construct()
     {
         $this->arr_member = array(0 => array('firstname' => "jutamast",'lastname' => "akkavasakul",'citizenid' =>"1111111111",'gender'=>1,'birthdate'=>"1987-12-22",'phone'=>"0879953272",'registerdate'=>"2012-01-03",'expiredate'=>"2013-01-03"),
@@ -85,11 +86,28 @@ class Member
      * @param string $expire_date
      * @return object Member
      */
-    public function RenewMember($member_id, $register_date, $expire_date)
+    public function renewMember($member_id, $register_date, $expire_date)
     {
         $this->arr_member[$member_id]["registerdate"] = $register_date;
         $this->arr_member[$member_id]["expiredate"] = $expire_date;
 
         return $this->arr_member[$member_id];
     }
+
+    /**
+     * @todo Check username, password
+     * @todo register session if success
+     * @todo return just boolean :D
+     * 
+     * @param string $username
+     * @param string $password
+     * @return boolean
+     */
+    public function login($username, $password)
+    {
+        $is_success = true;
+        
+        return $is_success;
+    }
+
 }
